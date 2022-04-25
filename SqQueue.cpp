@@ -30,6 +30,13 @@ bool EnQueue(SqQueue &Q,int x){
     return true;
 }
 
+bool OutQueue(SqQueue &Q, int &x) {
+    if (Empty(Q))return false;
+    x = Q.data[Q.front];
+    Q.front = (Q.front + 1) % MaxSize;
+    return true;
+}
+
 int main() {
     SqQueue Q;
     InitQueue(Q);
